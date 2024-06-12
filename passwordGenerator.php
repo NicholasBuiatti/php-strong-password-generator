@@ -1,7 +1,6 @@
 <?php
-$nCaratteri = $_GET["nCaratteri"];
 $charList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "£", "$", "%", "&", "/", "=", "?", "^", "@", "#"];
-$pass = "";
+
 ?>
 
 
@@ -29,12 +28,18 @@ $pass = "";
         <h1 class="text-center">Ecco la tua Password:</h1>
         <p>
             <?php
-            for ($i = 0; $i < $nCaratteri; $i++) {
-                $nRandom = rand(0, count($charList) - 1);
-                $pass = $pass . $charList[$nRandom];
+            //CONTROLLO SE LA VARIABILE NCARATTERI ESISTE O NO
+            if (isset($_GET['nCaratteri'])) {
+                $nCaratteri = $_GET['nCaratteri'];
+                $pass = "";
+                for ($i = 0; $i < $nCaratteri; $i++) {
+                    $nRandom = rand(0, count($charList) - 1);
+                    $pass = $pass . $charList[$nRandom];
+                }
+                echo "<h2>" . $pass . "</h2>";
+            } else {
+                echo "Per favore, fornisci il numero di caratteri.";
             }
-            echo "<h2>" . $pass . "</h2>"
-            // echo "<h2>" . $charList . "</h2>"
             ?>
         </p>
     </div>
