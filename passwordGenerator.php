@@ -19,11 +19,18 @@ $pass = "";
 
 <body class="bg-dark text-white">
     <div class="container">
+        <div class="container text-center">
+            <h1>Inserisci qua le tue richieste</h1>
+            <form action="" method:"GET">
+                <input type="number" name="nCaratteri" min="8" max="16">
+                <button type="submit" class="btn btn-warning">Invia</button>
+            </form>
+        </div>
         <h1 class="text-center">Ecco la tua Password:</h1>
         <p>
             <?php
             for ($i = 0; $i < $nCaratteri; $i++) {
-                $nRandom = rand(0, count($charList));
+                $nRandom = rand(0, count($charList) - 1);
                 $pass = $pass . $charList[$nRandom];
             }
             echo "<h2>" . $pass . "</h2>"

@@ -11,7 +11,7 @@
 <body class="bg-dark text-white">
     <div class="container text-center">
         <h1>Inserisci qua le tue richieste</h1>
-        <form action="passwordGenerator.php" method:"GET">
+        <form action="1passwordGenerator.php" method:"GET">
             <input type="number" name="nCaratteri" min="8" max="16">
             <button type="submit" class="btn btn-warning">Invia</button>
         </form>
